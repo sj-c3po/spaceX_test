@@ -21,9 +21,13 @@ export const api = createApi({
                 body
             }),
             async onQueryStarted(body, { dispatch, queryFulfilled }) {
-                const { data } = await queryFulfilled
+                try {
+                    const { data } = await queryFulfilled
 
-                dispatch(updateLaunches(data.docs))
+                    dispatch(updateLaunches(data.docs))
+                } catch (error) {
+                    return error;
+                }  
             }
         })
     })
