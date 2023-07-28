@@ -11,7 +11,7 @@ import { query_Successful_2015_2019_Desc } from "./services/queries/queries";
 import { useGetLaunchesQuery } from "./services/api";
 
 
-const App = () => {    
+const App = () => {
     
     // записываем полученные данные в store из-за сортировки asc/desc, чтобы не делать новый запрос на сервер 
 
@@ -20,7 +20,7 @@ const App = () => {
     // нужно будет обновлять store вручную, (TODO: автоматизировать)
     // но пока так
 
-    const launches = useSelector(state => state.launches.docs);
+    const launches = useSelector(state => state.launches?.docs);
     
     const { error, isLoading } = useGetLaunchesQuery(query_Successful_2015_2019_Desc);
 
