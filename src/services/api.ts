@@ -13,7 +13,7 @@ export const api = createApi({
     endpoints: builder => ({
         getLaunches: builder.query({
             query: (body) => ({
-                url: "/querysdsdsd",
+                url: "/query",
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
