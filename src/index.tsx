@@ -5,11 +5,18 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
 
-import App from './App.jsx'
-import store from './store/index';
-import { api } from './services/api';
+import App from './App.tsx'
+import store from './store/index.ts';
+import { api } from './services/api.ts';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+
+let rootDiv = document.getElementById("root") as HTMLElement;
+
+if (!rootDiv) {
+    throw new Error("React App render error: cannot find a container with id='root'");
+}
+
+const root = ReactDOM.createRoot(rootDiv);
 
 root.render(
     <ApiProvider api={ api }> 

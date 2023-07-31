@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { updateLaunches } from "../store/launchesSlice";
-
+import { updateLaunches } from "../store/launchesSlice.ts";
+import { ILaunchesList } from "../interfaces.ts"
 
 const SPACE_X_BASE_API_URL = "https://api.spacexdata.com/v5/launches"
 
@@ -13,7 +13,7 @@ export const api = createApi({
     endpoints: builder => ({
         getLaunches: builder.query({
             query: (body) => ({
-                url: "/query",
+                url: "/querysdsdsd",
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',

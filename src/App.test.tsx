@@ -4,10 +4,10 @@ import { render } from "@testing-library/react";
 import App from './App';
 
 import { useSelector } from 'react-redux'
-import { useGetLaunchesQuery } from "./services/api";
+import { useGetLaunchesQuery } from "./services/api.ts";
 
 jest.mock('react-redux');
-jest.mock('./services/api');
+jest.mock('./services/api.ts');
 
 
 it('check app render', () => {

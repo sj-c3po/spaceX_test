@@ -1,14 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "./hooks.ts";
 
-import { Launch } from "./components/Launch.jsx";
-import { SortButton } from "./components/SortButton.jsx";
-import { Error } from "./components/Error.jsx";
-import { Loading } from "./components/Loading.jsx";
+import { Launch } from "./components/Launch.tsx";
+import { SortButton } from "./components/SortButton.tsx";
+import { Error } from "./components/Error.tsx";
+import { Loading } from "./components/Loading.tsx";
 
-import { query_Successful_2015_2019_Desc } from "./services/queries/queries";
+import { query_Successful_2015_2019_Desc } from "./services/queries/queries.ts";
 
-import { useGetLaunchesQuery } from "./services/api";
+import { useGetLaunchesQuery } from "./services/api.ts";
 
 
 const App = () => {
@@ -20,13 +20,15 @@ const App = () => {
     // нужно будет обновлять store вручную, (TODO: автоматизировать)
     // но пока так
 
-    const launches = useSelector(state => state.launches?.docs);
+    const launches = useAppSelector(state => state.launches?.docs);
     
     const { error, isLoading } = useGetLaunchesQuery(query_Successful_2015_2019_Desc);
 
     
     if (isLoading) return <Loading />
-    if (error) return <Error error={error} />
+    
+    if (error) return <Error errorInfo={error} />
+   
         
     return ( 
         <div className="container">   

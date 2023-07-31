@@ -1,12 +1,13 @@
 import React from "react";
 
-export function Error({error}) {
+// TODO: fix type ts
+export function Error({errorInfo}: any) {
 
     return (
         <div>
             Something goes wrong:
             <p>
-                {error.status} {error.data} 
+                {errorInfo.status} {errorInfo.data} 
             </p>
         </div>
     );

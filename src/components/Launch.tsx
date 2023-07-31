@@ -1,7 +1,7 @@
 import React from "react";
+import { ILaunch } from "../interfaces.ts";
 
-// TODO: если нет фотки - кртинку
-export function Launch({name, details, date_unix, imgUrl}) {
+export function Launch({name, details, date_unix, imgUrl}: ILaunch) {
 
     return (
         <div className="launch">

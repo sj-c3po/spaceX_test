@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Launch } from "./Launch.jsx";
+import { Launch } from "./Launch.tsx";
 
 describe('Launches', () => {
 

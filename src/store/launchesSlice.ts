@@ -1,13 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ILaunchesList } from "../interfaces.ts";
+
+const initialState: ILaunchesList = {
+    docs: [], 
+    orderByDesc: true 
+} 
 
 const launchesSlice = createSlice({
     name: 'launches', 
-    initialState: {
-        docs: [], 
-        orderByDesc: true 
-    },
+    initialState,
     reducers: {
-        updateLaunches(state, action) {
+        updateLaunches(state, action: PayloadAction<any[]>) {
             state.docs = action.payload 
         },
         reverseLaunchesOrder(state) {

@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
-    entry: ["@babel/polyfill", "./src/index.jsx"],
+    entry: ["@babel/polyfill", "./src/index.tsx"],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].[contenthash].js"
@@ -27,7 +27,7 @@ module.exports = {
                 use: ["file-loader"]
             },
             {
-                test: /\.m?js$/,
+                test: /\.m?[t|j]s$/,
                 exclude: /node_modules/,
                 use: 
                     {
